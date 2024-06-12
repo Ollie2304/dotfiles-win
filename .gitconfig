@@ -1,0 +1,24 @@
+[user]
+	name = Ollie
+	email = github@ollie2304.co.uk
+	signingkey = C:/Users/Ollie/.ssh/id_ed25519.pub
+	username = Ollie2304
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
+[gpg]
+	format = ssh
+[tag]
+	gpgsign = true
