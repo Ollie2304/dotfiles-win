@@ -108,7 +108,7 @@ window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
   - command: "ignore"
-    match_process_name: "/Taskmgr|ScreenClippingHost|Flow.Launcher|Godot/"
+    match_process_name: "/Taskmgr|ScreenClippingHost/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -123,6 +123,15 @@ window_rules:
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
+
+  - command: "ignore"
+    match_process_name: "Flow.Launcher"
+  - command: "set floating"
+    match_process_name: "godot"
+  - command: "set floating"
+    match_process_name: "clion64"
+  - command: "set floating"
+    match_process_name: "rider64"
 
 binding_modes:
   - name: "resize"
