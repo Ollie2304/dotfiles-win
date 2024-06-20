@@ -11,7 +11,6 @@ return {
             "javascript",
             "c_sharp",
             "python",
-            "gdscript",
         },
             -- install missing parsers when entering a buffer
             auto_install = true,
