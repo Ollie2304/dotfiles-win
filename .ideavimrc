@@ -24,13 +24,6 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
-set which-key
-" disable the timeout option
-set notimeout
-"increase the timeoutlen (default: 1000), don't add space around the equal sign
-"set timeoutlen=5000
-let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_ProcessUnknownMappings = "false"
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
@@ -41,3 +34,28 @@ let g:WhichKey_ProcessUnknownMappings = "false"
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
+
+
+
+" INTELLIMACS
+
+source ~/.intellimacs/spacemacs.vim
+
+" Optional Modules
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+" Which-key plugin
+source ~/.intellimacs/which-key.vim
+
+" Remap Y to y$: end of line yank
+nnoremap Y y$
+
+" Comma for major mode
+nmap , <leader>m
+vmap , <leader>m
+
+" Add/edit actions
+nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+vnoremap <leader>gl    :action Vcs.Show.Log<CR>
