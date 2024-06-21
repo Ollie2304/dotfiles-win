@@ -7,6 +7,8 @@ return
             vim.keymap.set("n", "K", vim.lsp.buf.hover,{})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition,{})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action,{})
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            _G.lsp_capabilities = capabilities
         end
     },
 
@@ -35,10 +37,10 @@ return
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
                     require("lspconfig")[server_name].setup({})
+                    capabilities = _G.lsp_capabilities
                 end,
             })
         end,
-    },
-
+    }
 }
 
